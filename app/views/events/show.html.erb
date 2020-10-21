@@ -15,5 +15,21 @@
   <%= @event.date %>
 </p>
 
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong><%= @event.attendees.count %> Attendees:</strong>
+  <ul>
+    <% @event.attendees.each do |attendee| %>
+      <li><%= attendee.name %></li>
+    <% end %>
+  </ul>
+</p>
+
+
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
