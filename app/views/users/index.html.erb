@@ -20,14 +20,10 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.username %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'See Events', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-      <p>
-  <strong>Events:</strong>
-  <%= user.created_events.last.title %>
-</p>
     <% end %>
   </tbody>
 </table>
