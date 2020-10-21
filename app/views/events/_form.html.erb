@@ -16,14 +16,19 @@
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+   <div class="field">
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+
+   <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
   </div>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.datetime_select :date %>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
   </div>
 
   <div class="actions">

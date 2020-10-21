@@ -35,5 +35,7 @@
 <%= link_to 'Log In', '/login', method: :get %>
 
 <% else %>
-<%= link_to 'Log out', '/logout', method: :destroy %>
+<%= link_to 'Create New Event', new_event_path %><br />
+<%= link_to 'Log out', '/logout', method: :destroy %> 
+
 <% end %>
