@@ -4,7 +4,10 @@ RSpec.describe "events/edit", type: :view do
   before(:each) do
     @event = assign(:event, Event.create!(
       title: "MyString",
-      description: "MyText"
+      description: "MyText",
+      creator: User.new,
+      location: "Mylocation",
+      date: "2020-01-01"
     ))
   end
 
@@ -16,6 +19,8 @@ RSpec.describe "events/edit", type: :view do
       assert_select "input[name=?]", "event[title]"
 
       assert_select "textarea[name=?]", "event[description]"
+
+      assert_select "input[name=?]", "event[location]"
     end
   end
 end

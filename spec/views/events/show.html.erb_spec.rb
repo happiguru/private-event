@@ -4,7 +4,10 @@ RSpec.describe "events/show", type: :view do
   before(:each) do
     @event = assign(:event, Event.create!(
       title: "Title",
-      description: "MyText"
+      description: "MyText",
+      creator: User.new,
+      location: "Mylocation",
+      date: "2020-01-01"
     ))
   end
 
