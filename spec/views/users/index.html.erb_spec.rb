@@ -4,19 +4,19 @@ RSpec.describe 'users/index', type: :view do
   before(:each) do
     assign(:users, [
              User.create!(
-               name: 'Name',
-               username: 'Username'
+               name: 'Name1',
+               username: 'Username1'
              ),
              User.create!(
-               name: 'Name',
-               username: 'Username'
+               name: 'Name2',
+               username: 'Username2'
              )
            ])
   end
 
   it 'renders a list of users' do
     render
-    assert_select 'tr>td', text: 'Name'.to_s, count: 2
-    assert_select 'tr>td', text: 'Username'.to_s, count: 2
+    expect(rendered).to match(/Name1/)
+    expect(rendered).to match(/Name2/)
   end
 end
