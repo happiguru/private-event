@@ -10,6 +10,9 @@ class InvitationsController < ApplicationController
   # GET /invitations/1
   # GET /invitations/1.json
   def show
+    @event = Event.find(params[:id])
+    @event.attendees << current_user
+    redirect_to @event
   end
 
   # GET /invitations/new
@@ -64,7 +67,7 @@ class InvitationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_invitation
-      @invitation = Invitation.find(params[:id])
+      @invitation = Event.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

@@ -10,7 +10,8 @@
         <th>Description</th>
         <th>Date</th>
         <th>Location</th>
-        <th colspan="3">More</th>
+        <th>More</th>
+        <th colspan="3">Attend</th>
       </tr>
     </thead>
 
@@ -21,7 +22,14 @@
           <td><%= event.description %></td>
           <td><%= event.date.strftime('%b %d %Y') unless event.date.nil? %></td>
           <td><%= event.location %></td>
-          <td><%= link_to 'Show', event %></td>        
+          <td><%= link_to 'Show', event %></td>
+          <td>
+          <% unless event.attendees.include?(current_user) %>   
+          <%= link_to 'Attend', invitation_path(event.id) %>
+          <% else %>
+          Attended
+          <% end %>
+          </td>     
         </tr>
       <% end %>
     </tbody>
