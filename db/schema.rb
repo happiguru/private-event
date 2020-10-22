@@ -20,15 +20,12 @@ ActiveRecord::Schema.define(version: 2020_10_21_194025) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "creator_id"
-    t.integer "attendee_id"
-    t.index ["attendee_id"], name: "index_events_on_attendee_id"
     t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
   create_table "invitations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "attended_event"
     t.integer "attendee_id"
     t.integer "attended_event_id"
   end
@@ -38,8 +35,6 @@ ActiveRecord::Schema.define(version: 2020_10_21_194025) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "attended_event_id"
-    t.index ["attended_event_id"], name: "index_users_on_attended_event_id"
   end
 
 end
