@@ -25,6 +25,5 @@ RSpec.describe "events/index", type: :view do
     assert_select "tr>td", text: "Title".to_s, count: 2
     assert_select "tr>td", text: "MyText".to_s, count: 2
     assert_select "tr>td", text: "Mylocation".to_s, count: 2
-    #assert_select "tr>td", text: "2020-01-01".to_s, count: 2
   end
 end
