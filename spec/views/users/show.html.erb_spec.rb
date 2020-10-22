@@ -8,9 +8,8 @@ RSpec.describe "users/show", type: :view do
     ))
   end
 
-  it "renders attributes in <p>" do
+  it "renders attributes in <h1>" do
     render
     expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Username/)
   end
 end
