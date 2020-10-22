@@ -21,18 +21,20 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context 'Association test for user/event' do
+  context 'Association test for User' do
     it "should have many created_events" do
-      t = User.reflect_on_association(:created_events)
-      expect(t.macro).to eq(:has_many)
+      u = User.reflect_on_association(:created_events)
+      expect(u.macro).to eq(:has_many)
     end
+
     it "should have many attended_events" do
-      t = User.reflect_on_association(:attended_events)
-      expect(t.macro).to eq(:has_many)
+      u = User.reflect_on_association(:attended_events)
+      expect(u.macro).to eq(:has_many)
     end
+    
     it "should have many invitations" do
-      t = User.reflect_on_association(:invitations)
-      expect(t.macro).to eq(:has_many)
+      u = User.reflect_on_association(:invitations)
+      expect(u.macro).to eq(:has_many)
     end
   end
 end
