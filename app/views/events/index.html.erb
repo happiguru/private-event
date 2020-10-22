@@ -31,7 +31,7 @@
           <td><%= event.description %></td>
           <td><%= link_to 'Show', event %></td>
           <td>
-          <% unless event.attendees.include?(@user) %>   
+          <% unless event.attendees.include?(User.find_by(id: session[:user_id])) %>   
           <%= link_to 'Attend', invitation_path(event.id) %>
           <% else %>
           Attended
