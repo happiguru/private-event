@@ -1,0 +1,16 @@
+<% @past_events.each do |event| %>
+  <tr>
+    <td><%= event.title %></td>
+    <td><%= event.date.strftime('%b %d %Y') unless event.date.nil? %></td>
+    <td><%= event.location %></td>
+    <td><%= event.description %></td>
+    <td><%= link_to 'Show', event %></td>
+    <td>
+    <% unless event.attendees.include?(User.find_by(id: session[:user_id])) %>   
+    <%= link_to 'Attend', invitation_path(event.id) %>
+    <% else %>
+    Attended
+    <% end %>
+    </td>     
+  </tr>
+<% end %>
