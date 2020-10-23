@@ -2,13 +2,11 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
   # GET /events
-  # GET /events.json
   def index
     @events = Event.all
   end
 
   # GET /events/1
-  # GET /events/1.json
   def show; end
 
   # GET /events/new
@@ -20,7 +18,6 @@ class EventsController < ApplicationController
   def edit; end
 
   # POST /events
-  # POST /events.json
   def create
     @event = current_user.created_events.build(event_params)
 
@@ -34,7 +31,6 @@ class EventsController < ApplicationController
   end
 
   # PATCH/PUT /events/1
-  # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
       if @event.update(event_params)
@@ -47,12 +43,10 @@ class EventsController < ApplicationController
   end
 
   # DELETE /events/1
-  # DELETE /events/1.json
   def destroy
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
