@@ -8,7 +8,6 @@
       <tr>
         <th>Event Title</th>
         <th>Event Date</th>
-        <th>Event Status</th>
         <th>Event Location</th>
         <th>Event Description</th>
         <th>More</th>
@@ -21,12 +20,6 @@
         <tr>
           <td><%= event.title %></td>
           <td><%= event.date.strftime('%b %d %Y') unless event.date.nil? %></td>
-          <td><% if !event.date.nil? && event.date < Time.now %>
-          Past
-          <% else %>
-          Upcoming
-          <% end %>
-          </td>
           <td><%= event.location %></td>
           <td><%= event.description %></td>
           <td><%= link_to 'Show', event %></td>
@@ -51,7 +44,6 @@
       <tr>
         <th>Event Title</th>
         <th>Event Date</th>
-        <th>Event Status</th>
         <th>Event Location</th>
         <th>Event Description</th>
         <th>More</th>
@@ -64,12 +56,6 @@
         <tr>
           <td><%= event.title %></td>
           <td><%= event.date.strftime('%b %d %Y') unless event.date.nil? %></td>
-          <td><% if !event.date.nil? && event.date < Time.now %>
-          Past
-          <% else %>
-          Upcoming
-          <% end %>
-          </td>
           <td><%= event.location %></td>
           <td><%= event.description %></td>
           <td><%= link_to 'Show', event %></td>

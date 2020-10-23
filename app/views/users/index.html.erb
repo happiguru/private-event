@@ -3,8 +3,8 @@
 
 <h1 class="bg-light pl-3">Event Creators</h1>
 
-<% if !User.find_by(id: session[:user_id]).nil? %>
-<p class="pl-3"><%= User.find_by(id: session[:user_id]).name %></p>
+<% if logged_in? %>
+<p class="pl-3"><%= current_user.name %></p>
 <% end %>
 <div class="table-responsive-sm">
 <table class="table table-striped table-bordered table-hover ml-3">
@@ -23,7 +23,7 @@
         <td><%= user.username %></td>
         
         <td>
-          <% if User.find_by(id: session[:user_id]).nil? %>
+          <% unless logged_in? %>
             Sign in to see Event details
           <% else %>
             <%= link_to 'See Events', user %>
@@ -38,7 +38,7 @@
 <br>
 
 <div class="pl-3">
-  <% if User.find_by(id: session[:user_id]).nil? %>
+  <% unless logged_in? %>
   <span><%= link_to  'Sign Up', new_user_path, class: "btn text-light bg-success" %></span>
   <span><%= link_to 'Log In', '/login', method: :get, class: "btn text-light bg-success"  %></span>
 
