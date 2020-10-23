@@ -3,7 +3,7 @@ require 'capybara/rspec'
 
 RSpec.describe User, type: :model do
   let(:user) { User.create(name: 'name', username: 'username') }
-  
+
   context 'Creating a user' do
     it 'creates a user in the User model' do
       expect(user).to be_an User

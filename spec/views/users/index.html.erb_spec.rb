@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'capybara/rspec'
 
 RSpec.describe 'users/index', type: :view do
   before(:each) do
