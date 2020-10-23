@@ -19,6 +19,8 @@ This project was built with:
 - Ruby on Rails v6.0.3.3
 - Rubocop Linters
 - Bootstrap
+- RSpec
+- Capybara
 
 ## 🛠 Getting Started
 ## Install 
