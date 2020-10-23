@@ -4,10 +4,15 @@ class EventsController < ApplicationController
   # GET /events
   def index
     @events = Event.all
+    @upcoming_events = Event.upcoming_events
+    @past_events = Event.past_events
   end
 
   # GET /events/1
-  def show; end
+  def show
+    @event = Event.find(params[:id])
+    @attendees = @event.invitations
+  end
 
   # GET /events/new
   def new
