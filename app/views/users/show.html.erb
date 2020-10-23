@@ -14,23 +14,7 @@
       </tr>
     </thead>
     <tbody>
-    <% @user.created_events.order(:date).reverse.each do |event| %>
-    <tr>
-        <p>
-        <td><%= event.title %></td>
-          <td><%= event.date.strftime('%b %d %Y') unless event.date.nil? %></td>
-          <td><% if !event.date.nil? && event.date < Time.now %>
-          Past
-          <% else %>
-          Upcoming
-          <% end %>
-          </td>
-          <td><%= event.location %></td>
-          <td><%= event.description %></td>
-          <td><%= link_to 'Show', event %></td>
-        </p>
-    </tr>
-    <% end %>
+      <%= render 'created_events' %>
     </tbody>
     </table>
 
@@ -49,23 +33,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @user.attended_events.order(:date).reverse.each do |event| %>
-      <tr>
-        <p>
-        <td><%= event.title %></td>
-          <td><%= event.date.strftime('%b %d %Y') unless event.date.nil? %></td>
-          <td><% if !event.date.nil? && event.date < Time.now %>
-          Past
-          <% else %>
-          Upcoming
-          <% end %>
-          </td>
-          <td><%= event.location %></td>
-          <td><%= event.description %></td>
-          <td><%= link_to 'Show', event %></td>
-        </p>
-      </tr>
-      <% end %>
+      <%= render 'attended_events' %>
     </tbody>
     </table>
   <br>

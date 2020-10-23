@@ -1,0 +1,18 @@
+<% @user.attended_events.order(:date).reverse.each do |event| %>
+  <tr>
+    <p>
+    <td><%= event.title %></td>
+    <td><%= event.date.strftime('%b %d %Y') %></td>
+    <td>
+      <% if !event.date.nil? && event.date < Time.now %>
+      Past
+      <% else %>
+      Upcoming
+      <% end %>
+    </td>
+    <td><%= event.location %></td>
+    <td><%= event.description %></td>
+    <td><%= link_to 'Show', event %></td>
+    </p>
+  </tr>
+<% end %>
