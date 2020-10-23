@@ -1,18 +1,25 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# private-event
+# Private-Event Booking Application
 Private Event Application built with Ruby on Rails
+![](media/zoom_2.mp4)
 
-In this project we built an exclusive private event booking where users invite other users for an event.
+![](media/Screenshot_2020-10-23_04-21-03.png)
 
-> This README documents the steps involved to implement a Private Event project which is based on Authentication.
+![](media/Screenshot_2020-10-23_04-39-29.png)
+
+![](media/Screenshot_2020-10-23_04-41-58.png)
+
+In this project we built an exclusive Private Event Booking App where users invite other users for an event.
+
+> This README documents the steps involved to implement a Private Event project which is based on Association, Authentication.
 
 This project was built with:
 
 - Ruby. v2.7.0
 - Ruby on Rails v6.0.3.3
 - Rubocop Linters
-- Devise
+- Bootstrap
 
 ## 🛠 Getting Started
 ## Install 
