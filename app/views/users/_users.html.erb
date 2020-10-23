@@ -1,0 +1,13 @@
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.username %></td>
+    <td>
+      <% unless logged_in? %>
+        Sign in to see Event details
+      <% else %>
+        <%= link_to 'See Events', user %>
+      <% end%>
+    </td>
+  </tr>
+<% end %>

@@ -35,6 +35,11 @@
               <a class="nav-link text-light" href="/events">Events</a>
             </li>
             <li class="nav-item">
+              <% if logged_in? %>
+                <%= link_to current_user.username, current_user, class: 'nav-link text-light' %>
+              <% end %>
+            </li>
+            <li class="nav-item">
               <%= link_to 'Log out', '/logout', method: :destroy, class: 'nav-link text-light'  %>
             </li>
             <% end %>
