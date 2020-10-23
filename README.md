@@ -2,7 +2,6 @@
 
 # Private-Event Booking Application
 Private Event Application built with Ruby on Rails
-![](media/zoom_2.mp4)
 
 ![](media/Screenshot_2020-10-23_04-21-03.png)
 
